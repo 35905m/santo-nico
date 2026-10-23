@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cotiza tu seguro de auto y hogar en español | Santo Nico de los Asegurados</title>
+<meta name="description" content="Cotización gratis de seguro de auto y hogar para familias hispanas de Texas. Te atendemos en español. Nick Martinez Insurance Agency, Fort Worth y Grand Prairie.">
+<meta name="theme-color" content="#140b06">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://elsantonico.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_US">
+<meta property="og:site_name" content="Nick Martinez Insurance Agency">
+<meta property="og:title" content="Cotiza tu seguro de auto y hogar en español | Santo Nico de los Asegurados">
+<meta property="og:description" content="Protege tu hogar y tu auto, con fe y buen precio. Cotización gratis para familias hispanas de Texas.">
+<meta property="og:url" content="https://elsantonico.com/">
+<meta property="og:image" content="https://elsantonico.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Santo Nico de los Asegurados, con halo y lentes de aviador, en una veladora.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preload" href="assets/cinzel-decorative-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/lora-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/hero.webp" as="image" type="image/webp">
+
+<style>
+@font-face{font-family:"Cinzel Decorative";font-weight:700;font-style:normal;font-display:swap;src:url(assets/cinzel-decorative-700.woff2) format("woff2")}
+@font-face{font-family:"Cinzel";font-weight:400 900;font-style:normal;font-display:swap;src:url(assets/cinzel-var.woff2) format("woff2")}
+@font-face{font-family:"Lora";font-weight:400 700;font-style:normal;font-display:swap;src:url(assets/lora-var.woff2) format("woff2")}
+@font-face{font-family:"Lora";font-weight:400 700;font-style:italic;font-display:swap;src:url(assets/lora-italic-var.woff2) format("woff2")}
+
+:root{
+  --ink:#140b06; --brown:#1e110a; --brown-2:#2d1a0f; --brown-3:#44291a;
+  --gold:#d4a63a; --gold-hi:#f6dd8e; --gold-lo:#9a7420;
+  --parch:#f5e8c8; --parch-2:#ecd9a6; --parch-3:#fff8e6;
+  --text-d:#f6ead0; --text-l:#2b1708; --muted-d:#d9c79c; --muted-l:#5a3d22;
+  --err:#9b1c1c;
+  --goldgrad:linear-gradient(180deg,#fbe9a8 0%,#e0b648 50%,#b98a28 100%);
+  --serif:"Lora",Georgia,"Times New Roman",serif;
+  --disp:"Cinzel Decorative","Cinzel",Georgia,serif;
+  --cinz:"Cinzel",Georgia,serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ink);color:var(--text-d);font-family:var(--serif);font-size:17px;line-height:1.55;
+  padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+img,video,svg{max-width:100%}
+a{color:inherit}
+a[href^="tel:"]{white-space:nowrap}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--gold-hi);outline-offset:3px;border-radius:6px}
+.gold-text{background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+@supports not (background-clip:text){.gold-text{color:var(--gold-hi);-webkit-text-fill-color:currentColor}}
+.ic{width:1em;height:1em;fill:currentColor;flex:none}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:14px 26px;border-radius:14px;
+  font-family:var(--cinz);font-weight:800;font-size:17px;letter-spacing:.02em;text-decoration:none;text-align:center;cursor:pointer;border:0;
+  transition:transform .15s,box-shadow .15s,filter .15s;-webkit-tap-highlight-color:transparent}
+.btn-gold{color:#2a1505;background:linear-gradient(180deg,#fdeeb0 0%,#e8bf50 48%,#c8962c 100%);
+  box-shadow:0 0 0 2px #7a5712 inset,0 0 0 4px rgba(255,236,170,.55) inset,0 8px 22px rgba(212,166,58,.35),0 2px 0 #7a5712}
+.btn-gold:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.btn-gold:active{transform:translateY(1px)}
+.btn-line{color:var(--gold-hi);background:transparent;box-shadow:0 0 0 2px var(--gold) inset}
+.btn-block{width:100%}
+
+/* ---------- top bar ---------- */
+.top{background:linear-gradient(#0d0703,#1a0e07);border-bottom:2px solid var(--gold-lo);box-shadow:0 1px 0 #000}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;padding-top:6px;padding-bottom:6px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--cinz);font-weight:700;font-size:12.5px;line-height:1.2;letter-spacing:.03em;color:var(--gold-hi);text-transform:uppercase}
+.brand .ic{width:22px;height:30px;color:var(--gold)}
+.top .btn{min-height:46px;padding:8px 16px;font-size:15px;border-radius:12px;white-space:nowrap}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;padding:20px 0 34px;
+  background:
+   radial-gradient(ellipse 70% 38% at 50% 14%,rgba(240,190,70,.34),transparent 70%),
+   radial-gradient(ellipse 120% 60% at 50% 100%,rgba(120,70,20,.35),transparent 70%),
+   linear-gradient(180deg,#1d0f07,#140b06)}
+.hero::before{content:"";position:absolute;inset:0;opacity:.07;pointer-events:none;
+  background:repeating-conic-gradient(from 0deg at 50% 22%,#ffd978 0 4deg,transparent 4deg 12deg)}
+.hero-grid{position:relative;display:grid;gap:18px;grid-template-areas:"portrait" "copy" "form"}
+.portrait-box{grid-area:portrait;display:flex;justify-content:center}
+.arch{position:relative;width:min(50vw,196px);aspect-ratio:720/930;margin-top:24px}
+.arch::before{content:"";position:absolute;left:50%;top:-24px;width:78%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;
+  border:3px solid var(--gold-hi);box-shadow:0 0 22px 4px rgba(255,214,110,.7),0 0 0 6px rgba(212,166,58,.25);z-index:0}
+.arch-frame{position:relative;z-index:1;width:100%;height:100%;border-radius:999px 999px 14px 14px;padding:7px;
+  background:linear-gradient(160deg,#fbe9a8,#c8962c 45%,#f1d27a 70%,#9a7420);
+  box-shadow:0 0 0 2px #5e4010,0 14px 40px rgba(0,0,0,.6),0 0 60px rgba(240,190,70,.25)}
+.arch-frame img{width:100%;height:100%;object-fit:cover;object-position:50% 0;border-radius:999px 999px 8px 8px;display:block;box-shadow:0 0 0 2px #3a2410 inset}
+.arch .cross-top{position:absolute;z-index:2;left:50%;top:-38px;width:20px;height:28px;transform:translateX(-50%);color:var(--gold-hi);filter:drop-shadow(0 1px 2px #000)}
+.eyebrow{font-family:var(--cinz);font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 10px;text-align:center}
+.copy{grid-area:copy;text-align:center}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(27px,7.6vw,34px);line-height:1.18;margin:0 0 14px;color:var(--gold-hi)}
+.sub{font-size:18px;color:var(--text-d);margin:0 auto 20px;max-width:34ch}
+.sub strong{color:var(--gold-hi)}
+.hero .cta-row{display:flex;justify-content:center}
+.hero .cta-row .btn{width:100%;max-width:380px}
+.chips{display:none;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0 0;padding:0;list-style:none}
+.chips li{font-family:var(--cinz);font-weight:700;font-size:13px;letter-spacing:.06em;color:var(--parch);border:1px solid var(--gold-lo);border-radius:999px;padding:5px 12px;background:rgba(0,0,0,.28)}
+
+/* ---------- dividers ---------- */
+.divider{display:block;width:min(300px,70%);height:26px;margin:0 auto;color:var(--gold)}
+.divider-sec{padding:6px 0 0}
+
+/* ---------- form card ---------- */
+.form-wrap{grid-area:form;scroll-margin-top:12px}
+.card{position:relative;background:linear-gradient(180deg,var(--parch-3),var(--parch) 40%,var(--parch-2));color:var(--text-l);border-radius:20px;padding:26px 20px 22px;
+  border:3px solid var(--gold);box-shadow:0 0 0 2px #5e4010,0 18px 50px rgba(0,0,0,.55),0 0 0 7px rgba(212,166,58,.18)}
+.card::before{content:"";position:absolute;inset:6px;border:1.5px solid var(--gold-lo);border-radius:14px;pointer-events:none;opacity:.65}
+.card-cross{position:absolute;left:50%;top:-22px;width:30px;height:40px;transform:translateX(-50%);color:var(--gold);filter:drop-shadow(0 2px 2px rgba(0,0,0,.6))}
+.card h2{font-family:var(--disp);font-weight:700;font-size:23px;line-height:1.2;text-align:center;margin:6px 0 4px;color:#4a2a0c}
+.card .lead{text-align:center;margin:0 0 16px;color:var(--muted-l);font-size:16px}
+.field{margin:0 0 14px;position:relative}
+.field label,.legend{display:block;font-family:var(--cinz);font-weight:800;font-size:14px;letter-spacing:.04em;color:#3a200a;margin:0 0 6px}
+.opt{font-family:var(--serif);font-weight:400;font-size:13px;color:var(--muted-l);letter-spacing:0}
+input[type=text],input[type=tel],input[type=email],select{width:100%;min-height:54px;padding:12px 14px;font:inherit;font-size:17px;color:#24130a;background:#fffdf6;
+  border:2px solid #a8832e;border-radius:12px;appearance:none;-webkit-appearance:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M4 7l6 6 6-6' fill='none' stroke='%237a5712' stroke-width='2.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:18px;padding-right:38px}
+input::placeholder{color:#8a7658}
+input:focus,select:focus{outline:3px solid rgba(212,166,58,.55);border-color:#7a5712}
+.field.bad input,.field.bad select{border-color:var(--err);background:#fff4f1}
+.err{display:none;margin:5px 2px 0;font-size:14px;font-weight:600;color:var(--err)}
+.field.bad .err,.pills-wrap.bad .err{display:block}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:end}
+fieldset{border:0;margin:0 0 14px;padding:0;min-width:0}
+.pills{display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:8px}
+.pill{position:relative}
+.pill input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.pill span{display:flex;align-items:center;justify-content:center;min-height:54px;padding:6px 8px;text-align:center;font-family:var(--cinz);font-weight:800;font-size:15px;line-height:1.15;color:#3a200a;
+  background:#fffdf6;border:2px solid #a8832e;border-radius:12px;transition:background .15s,color .15s}
+.pill input:checked+span{background:linear-gradient(180deg,#f7dc86,#d9ab3a);border-color:#6b4a0e;color:#241204;box-shadow:0 2px 0 #7a5712,0 0 0 2px #fff0bf inset}
+.pill input:focus-visible+span{outline:3px solid #3a200a;outline-offset:2px}
+.consent{display:flex;gap:12px;align-items:flex-start;margin:4px 0 16px;font-size:13.5px;line-height:1.45;color:#3a2410}
+.consent input{flex:none;width:26px;height:26px;margin:2px 0 0;accent-color:#7a5712}
+.consent label{font-family:var(--serif);font-weight:400;font-size:13.5px;letter-spacing:0;margin:0;color:#3a2410}
+.field.consent-f.bad .consent{outline:2px solid var(--err);outline-offset:4px;border-radius:6px}
+.reassure{margin:12px 0 0;text-align:center;font-size:14.5px;color:var(--muted-l);font-style:italic}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-msg{display:none;margin:12px 0 0;padding:12px 14px;border-radius:12px;background:#fff1ee;border:2px solid var(--err);color:#5a1010;font-weight:600;font-size:15px}
+.form-msg.show{display:block}
+.form-msg a{color:#5a1010;font-weight:800}
+.btn[disabled]{opacity:.7;cursor:progress}
+
+.thanks{display:none;text-align:center;padding:10px 4px 6px}
+.thanks.show{display:block}
+.thanks .big-cross{width:40px;height:54px;color:var(--gold-lo);margin:6px auto 8px;display:block}
+.thanks h2{font-size:27px}
+.thanks p{font-size:18px;margin:6px 0 18px;color:#3a2410}
+
+/* ---------- sections ---------- */
+section{position:relative}
+.sec-title{font-family:var(--disp);font-weight:700;font-size:clamp(24px,6.4vw,34px);line-height:1.2;text-align:center;margin:0 0 8px}
+.sec-sub{text-align:center;margin:0 auto 26px;max-width:46ch}
+.parch{background:linear-gradient(180deg,var(--parch-3),var(--parch));color:var(--text-l);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);padding:46px 0 50px}
+.parch .sec-title{color:#4a2a0c}
+.parch .sec-sub{color:var(--muted-l)}
+.benefits{display:grid;gap:16px}
+.ben{position:relative;background:linear-gradient(180deg,#2b190d,#1a0e07);color:var(--text-d);border-radius:18px;padding:22px 20px 22px 92px;border:2px solid var(--gold);
+  box-shadow:0 0 0 2px #5e4010,0 8px 20px rgba(60,35,10,.3);min-height:112px}
+.ben::before{content:"";position:absolute;inset:5px;border:1px solid rgba(212,166,58,.45);border-radius:13px;pointer-events:none}
+.ben .ico{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:58px;height:58px;display:grid;place-items:center;border-radius:50%;
+  border:2px solid var(--gold);background:radial-gradient(circle,#4a2d14,#24140a);color:var(--gold-hi)}
+.ben .ico svg{width:32px;height:32px}
+.ben h3{font-family:var(--cinz);font-weight:800;font-size:19px;line-height:1.2;margin:0 0 4px;color:var(--gold-hi)}
+.ben p{margin:0;font-size:16px;color:var(--text-d)}
+
+.video-sec{padding:50px 0 54px;background:radial-gradient(ellipse 80% 50% at 50% 30%,rgba(190,130,40,.22),transparent 70%),var(--brown)}
+.video-grid{display:grid;gap:30px;align-items:center;justify-items:center}
+.vframe{width:min(78vw,320px);padding:8px;border-radius:22px;background:linear-gradient(160deg,#fbe9a8,#c8962c 45%,#f1d27a 70%,#9a7420);box-shadow:0 0 0 2px #5e4010,0 16px 44px rgba(0,0,0,.6),0 0 60px rgba(240,190,70,.2)}
+.vframe video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:15px;background:#000}
+.prayer{position:relative;text-align:center;max-width:430px}
+.quote{font-family:var(--disp);font-weight:700;font-size:clamp(23px,6.2vw,31px);line-height:1.25;margin:10px 0 16px;color:var(--gold-hi)}
+.oracion{font-style:italic;color:var(--muted-d);font-size:17.5px;line-height:1.7;margin:0 0 6px}
+.oracion b{font-style:normal;color:var(--gold-hi);font-family:var(--cinz);letter-spacing:.1em}
+
+.trust{background:linear-gradient(180deg,#e3b947,#c8962c);color:#2a1505;border-top:2px solid #7a5712;border-bottom:2px solid #7a5712;padding:16px 0}
+.trust ul{list-style:none;margin:0 auto;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center;font-family:var(--cinz);font-weight:800;letter-spacing:.05em;font-size:15px;text-align:center}
+.trust li{display:flex;align-items:center;gap:8px}
+.trust .ic{width:10px;height:14px}
+
+.cta2{padding:48px 0 54px;text-align:center}
+.cta2 h2{margin-bottom:10px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:640px;margin:0 auto 28px}
+.gallery figure{margin:0}
+.gallery .gf{padding:4px;border-radius:12px;background:linear-gradient(160deg,#fbe9a8,#c8962c 50%,#9a7420);box-shadow:0 6px 16px rgba(60,35,10,.35)}
+.gallery img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:8px;background:#2d1a0f}
+.gallery figcaption{font-family:var(--cinz);font-weight:800;font-size:12.5px;line-height:1.25;letter-spacing:.03em;margin-top:8px;color:#4a2a0c}
+.cta2 .btn{width:100%;max-width:400px}
+.cta2 .or{margin:14px 0 0;font-size:16px;color:var(--muted-l)}
+.cta2 .or a{font-weight:700;color:#4a2a0c}
+
+#privacidad{padding:40px 0;background:var(--brown-2);border-top:2px solid var(--gold-lo);scroll-margin-top:8px}
+#privacidad h2{font-family:var(--cinz);font-weight:800;font-size:20px;color:var(--gold-hi);margin:0 0 10px;letter-spacing:.04em}
+#privacidad p{margin:0 0 10px;color:var(--muted-d);font-size:15.5px;max-width:70ch}
+
+footer{background:#0d0703;border-top:3px solid var(--gold);padding:30px 0 34px;text-align:center}
+footer .f-main{font-family:var(--cinz);font-weight:700;font-size:14.5px;letter-spacing:.04em;line-height:1.7;color:var(--gold-hi);margin:10px 0 14px}
+footer .f-main a{text-decoration:none;white-space:nowrap}
+footer .f-main a:hover{text-decoration:underline}
+footer small{display:block;max-width:76ch;margin:0 auto 10px;font-size:13px;line-height:1.6;color:#cdb98d}
+footer small a{color:var(--gold-hi)}
+
+/* ---------- sticky bar (mobile) ---------- */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:linear-gradient(#1a0e07,#0d0703);border-top:2px solid var(--gold);box-shadow:0 -6px 20px rgba(0,0,0,.5);transition:transform .25s}
+.sticky .btn{flex:1;min-height:54px;padding:8px 10px;font-size:16px}
+.sticky.hide{transform:translateY(110%)}
+
+/* ---------- desktop ---------- */
+@media (min-width:900px){
+  body{padding-bottom:0;font-size:18px}
+  .sticky{display:none}
+  .wrap{padding:0 32px}
+  .top .wrap{min-height:72px}
+  .brand{font-size:16px;letter-spacing:.04em}
+  .brand .ic{width:24px;height:32px}
+  .hero{padding:44px 0 56px}
+  .hero-grid{grid-template-columns:270px minmax(0,1fr) 420px;grid-template-areas:"portrait copy form";gap:36px;align-items:center}
+  .arch{width:270px;margin-top:30px}
+  .copy{text-align:left}
+  .eyebrow{text-align:left}
+  h1{font-size:clamp(31px,3.1vw,40px)}
+  .sub{margin-left:0;font-size:19px}
+  .hero .cta-row{justify-content:flex-start}
+  .chips{display:flex;justify-content:flex-start}
+  .card{padding:30px 26px 24px}
+  .benefits{grid-template-columns:repeat(3,1fr);gap:22px}
+  .ben{padding:92px 20px 24px;text-align:center}
+  .ben .ico{left:50%;top:20px;transform:translateX(-50%)}
+  .video-grid{grid-template-columns:auto minmax(0,520px);gap:70px;justify-items:start;justify-content:center}
+  .vframe{width:330px}
+  .prayer{text-align:left;max-width:520px;justify-self:start}
+  .gallery{gap:20px}
+  .divider{width:300px}
+  .sec-sub{margin-bottom:34px}
+}
+@media (max-width:360px){
+  .brand{font-size:11px}
+  .top .btn{padding:8px 12px;font-size:14px}
+  .pills{grid-template-columns:1fr 1fr}
+  .pills .pill:last-child{grid-column:1/-1}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+@media (prefers-reduced-motion:no-preference){
+  .btn-gold.pulse{animation:glow 3.2s ease-in-out infinite}
+  @keyframes glow{0%,100%{box-shadow:0 0 0 2px #7a5712 inset,0 0 0 4px rgba(255,236,170,.55) inset,0 8px 22px rgba(212,166,58,.35),0 2px 0 #7a5712}50%{box-shadow:0 0 0 2px #7a5712 inset,0 0 0 4px rgba(255,236,170,.55) inset,0 8px 34px rgba(255,200,80,.7),0 2px 0 #7a5712}}
+}
+</style>
+</head>
+<body>
+
+<!-- Decorative SVG sprites -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe9a8"/><stop offset=".5" stop-color="#e0b648"/><stop offset="1" stop-color="#b98a28"/></linearGradient>
+    <symbol id="cross" viewBox="0 0 20 28"><path d="M8 0h4v8h8v4h-8v16H8V12H0V8h8z"/><circle cx="10" cy="10" r="1.6" fill="#1a0e07" opacity=".35"/></symbol>
+    <symbol id="flourish" viewBox="0 0 300 26">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M128 13H88c-10 0-14-7-22-7-9 0-11 9-3 9 6 0 6-6 2-6"/>
+        <path d="M88 13c-8 7-18 8-28 5-10-3-16-1-26 0-9 1-18-1-28-5"/>
+        <path d="M172 13h40c10 0 14-7 22-7 9 0 11 9 3 9-6 0-6-6-2-6"/>
+        <path d="M212 13c8 7 18 8 28 5 10-3 16-1 26 0 9 1 18-1 28-5"/>
+      </g>
+      <g fill="currentColor"><circle cx="112" cy="13" r="2.2"/><circle cx="188" cy="13" r="2.2"/><path d="M147 1h6v7h7v4h-7v13h-6V12h-7V8h7z"/></g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Nick Martinez Insurance Agency">
+      <svg class="ic" fill="url(#g)" aria-hidden="true"><use href="#cross"/></svg>
+      <span>Nick Martinez<br>Insurance Agency</span>
+    </a>
+    <a class="btn btn-gold" href="tel:+18178879043" aria-label="Llamar al (817) 887-9043">
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .7-.2 1z"/></svg>
+      <span>(817) 887-9043</span>
+    </a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <div class="portrait-box">
+        <div class="arch">
+          <svg class="cross-top" fill="url(#g)" aria-hidden="true"><use href="#cross"/></svg>
+          <div class="arch-frame">
+            <img src="assets/hero.webp" width="720" height="930" fetchpriority="high" decoding="async"
+                 alt="Santo Nico de los Asegurados: un hombre sonriente con halo dorado, lentes de aviador y camisa vaquera, sobre una veladora.">
+          </div>
+        </div>
+      </div>
+
+      <div class="copy">
+        <p class="eyebrow">Santo Nico de los Asegurados</p>
+        <h1>Protege tu hogar y tu auto, con fe y buen precio.</h1>
+        <p class="sub">Cotización gratis de seguro de <strong>hogar y auto</strong> para familias hispanas de Texas. Te atendemos en español.</p>
+        <div class="cta-row"><a class="btn btn-gold pulse" href="#cotizar" data-cta="hero">Quiero mi cotización gratis</a></div>
+        <ul class="chips" aria-label="Datos de la agencia">
+          <li>Atención en español</li><li>Fort Worth</li><li>Grand Prairie</li>
+        </ul>
+      </div>
+
+      <div class="form-wrap" id="cotizar">
+        <div class="card">
+          <svg class="card-cross" fill="url(#g)" aria-hidden="true"><use href="#cross"/></svg>
+
+          <div id="formView">
+            <h2>Cotización gratis</h2>
+            <p class="lead">Déjanos tus datos y te llamamos.</p>
+
+            <form id="lead" action="#" method="post" novalidate autocomplete="on">
+              <fieldset class="pills-wrap" id="cotizarGroup" aria-describedby="err-cotizar">
+                <legend class="legend">¿Qué quieres cotizar?</legend>
+                <div class="pills">
+                  <label class="pill"><input type="radio" name="cotizar" value="Auto"><span>Auto</span></label>
+                  <label class="pill"><input type="radio" name="cotizar" value="Hogar"><span>Hogar</span></label>
+                  <label class="pill"><input type="radio" name="cotizar" value="Auto y Hogar" checked><span>Auto y Hogar</span></label>
+                </div>
+                <p class="err" id="err-cotizar">Elige una opción.</p>
+              </fieldset>
+
+              <div class="field">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Ej. María González" required aria-describedby="err-nombre">
+                <p class="err" id="err-nombre">Escribe tu nombre.</p>
+              </div>
+
+              <div class="field">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" inputmode="tel" autocomplete="tel" placeholder="10 dígitos" required pattern="[0-9()+\-.\s]{10,20}" aria-describedby="err-telefono">
+                <p class="err" id="err-telefono">Escribe un teléfono de 10 dígitos.</p>
+              </div>
+
+              <div class="row2">
+                <div class="field">
+                  <label for="codigo_postal">Código postal</label>
+                  <input type="text" id="codigo_postal" name="codigo_postal" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="76102" required pattern="[0-9]{5}" aria-describedby="err-zip">
+                  <p class="err" id="err-zip">Usa 5 dígitos.</p>
+                </div>
+                <div class="field">
+                  <label for="mejor_hora">Mejor hora para llamarte</label>
+                  <select id="mejor_hora" name="mejor_hora">
+                    <option value="">Elige…</option>
+                    <option value="Mañana">Mañana</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noche">Noche</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="correo">Correo electrónico <span class="opt">(opcional)</span></label>
+                <input type="email" id="correo" name="correo" inputmode="email" autocomplete="email" placeholder="tu@correo.com" aria-describedby="err-correo">
+                <p class="err" id="err-correo">Revisa tu correo electrónico.</p>
+              </div>
+
+              <div class="field consent-f" id="consentField">
+                <div class="consent">
+                  <input type="checkbox" id="consentimiento" name="consentimiento" value="Sí" required aria-describedby="err-consent">
+                  <label for="consentimiento">Acepto que Nick Martinez Insurance Agency me contacte por llamada, mensaje de texto o correo electrónico sobre mi cotización, incluso con marcado automático. El consentimiento no es requisito para comprar. Pueden aplicar tarifas de mensajes y datos.</label>
+                </div>
+                <p class="err" id="err-consent">Marca la casilla para poder contactarte.</p>
+              </div>
+
+              <!-- Hidden / tracking fields -->
+              <input type="hidden" name="source" value="santo-nico-squeeze">
+              <input type="hidden" name="language" value="es">
+              <input type="hidden" name="page_url" value="">
+              <input type="hidden" name="referrer" value="">
+              <input type="hidden" name="timestamp" value="">
+              <input type="hidden" name="utm_source" value="">
+              <input type="hidden" name="utm_medium" value="">
+              <input type="hidden" name="utm_campaign" value="">
+              <input type="hidden" name="utm_term" value="">
+              <input type="hidden" name="utm_content" value="">
+              <!-- Honeypot: humans never see this; bots fill it -->
+              <div class="hp" aria-hidden="true"><label>No llenar este campo<input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></label></div>
+
+              <button class="btn btn-gold btn-block" type="submit" id="submitBtn">Quiero mi cotización gratis</button>
+              <div class="form-msg" id="formMsg" role="alert"></div>
+              <p class="reassure">Sin compromiso. Sin spam. Tu información es privada.</p>
+            </form>
+            <noscript><p class="form-msg show">Activa JavaScript para enviar el formulario, o llámanos al <a href="tel:+18178879043">(817) 887-9043</a>.</p></noscript>
+          </div>
+
+          <div class="thanks" id="thanks" role="status" aria-live="polite" tabindex="-1">
+            <svg class="big-cross" fill="url(#g)" aria-hidden="true"><use href="#cross"/></svg>
+            <h2>¡Amén!</h2>
+            <p>Recibimos tu información. Te llamaremos pronto.</p>
+            <a class="btn btn-gold btn-block" href="tel:+18178879043">Llamar ahora</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="parch" aria-labelledby="t-ben">
+  <div class="wrap">
+    <svg class="divider" aria-hidden="true" style="color:#9a7420"><use href="#flourish"/></svg>
+    <h2 class="sec-title" id="t-ben" style="margin-top:14px">¿Por qué con nosotros?</h2>
+    <p class="sec-sub">Una agencia cercana, con buen humor y mucho respeto por tu familia.</p>
+    <div class="benefits">
+      <article class="ben">
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-7l-5 4v-4H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z"/><path d="M26 12h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2v3l-4-3h-4"/><path d="M8.500 12h9M8.500 15.500h6"/></svg></div>
+        <h3>Hablamos tu idioma</h3>
+        <p>Atención 100% en español, de principio a fin.</p>
+      </article>
+      <article class="ben">
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15 16 4l13 11"/><path d="M6 13v9h7M26 13v9"/><path d="M13 29v-5a2 2 0 0 1 2-2h8l2 2v5"/><circle cx="16.500" cy="29" r="1.300"/><circle cx="23" cy="29" r="1.300"/></svg></div>
+        <h3>Auto y hogar, juntos</h3>
+        <p>Pregúntanos cómo combinar tus seguros para ahorrar tiempo y trámites.</p>
+      </article>
+      <article class="ben">
+        <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="17" r="11"/><path d="M16 10v7l5 3"/><path d="M12 3h8"/></svg></div>
+        <h3>Rápido y sin compromiso</h3>
+        <p>Te llamamos pronto para platicar tu cotización. Tú decides.</p>
+      </article>
+    </div>
+    <svg class="divider" aria-hidden="true" style="color:#9a7420;margin-top:30px"><use href="#flourish"/></svg>
+  </div>
+</section>
+
+<section class="video-sec" aria-labelledby="t-video">
+  <div class="wrap">
+    <h2 class="sec-title gold-text" id="t-video">Mira la historia de Santo Nico</h2>
+    <p class="sec-sub" style="color:var(--muted-d)">Unos segundos de fe, humor y buena cobertura.</p>
+    <div class="video-grid">
+      <div class="vframe">
+        <video controls playsinline preload="metadata" poster="assets/poster.jpg" width="720" height="1280" aria-label="Video: la historia de Santo Nico de los Asegurados">
+          <source src="assets/santo-nico.mp4" type="video/mp4">
+          Tu navegador no puede reproducir este video.
+        </video>
+      </div>
+      <div class="prayer">
+        <svg class="divider" aria-hidden="true" style="margin:0 0 6px"><use href="#flourish"/></svg>
+        <p class="quote">“No prometo milagros… pero sí la mejor cobertura.”</p>
+        <p class="oracion"><b>Oración del asegurado</b><br>
+          Santo Nico, agente de confianza,<br>
+          protector de mi auto, mi casa<br>
+          y mi tranquilidad.<br>
+          Cúbreme contra el granizo,<br>
+          el chofer distraído<br>
+          y los deducibles altos.<br>
+          <b>Amén.</b></p>
+        <p style="margin:18px 0 0"><a class="btn btn-line" href="#cotizar" data-cta="video">Cotiza gratis</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust" role="note" aria-label="Dónde atendemos">
+  <div class="wrap">
+    <ul>
+      <li><svg class="ic" fill="#2a1505" aria-hidden="true"><use href="#cross"/></svg>Fort Worth • Grand Prairie, TX</li>
+      <li><svg class="ic" fill="#2a1505" aria-hidden="true"><use href="#cross"/></svg>Atención en español</li>
+    </ul>
+  </div>
+</div>
+
+<section class="parch cta2" aria-labelledby="t-cta2" style="border-top:0">
+  <div class="wrap">
+    <h2 class="sec-title" id="t-cta2">Que la tranquilidad también llegue a tu casa</h2>
+    <p class="sec-sub">Cotiza tu seguro de hogar y auto gratis. Sin compromiso.</p>
+    <div class="gallery">
+      <figure><div class="gf"><img loading="lazy" decoding="async" src="assets/candle.webp" width="540" height="960" alt="Una veladora de Santo Nico de los Asegurados encendida con un fósforo."></div><figcaption>La veladora de la tranquilidad</figcaption></figure>
+      <figure><div class="gf"><img loading="lazy" decoding="async" src="assets/puerta.webp" width="540" height="960" alt="Santo Nico sonriendo en una puerta abierta, con una tabla que dice Auto, Hogar y Vida."></div><figcaption>Puertas abiertas, en español</figcaption></figure>
+      <figure><div class="gf"><img loading="lazy" decoding="async" src="assets/cargo.webp" width="540" height="960" alt="Santo Nico sosteniendo un cartel de broma: cargo, exceso de compromiso con mis clientes; fianza, tu confianza."></div><figcaption>Fianza: tu confianza</figcaption></figure>
+    </div>
+    <a class="btn btn-gold btn-block pulse" href="#cotizar" data-cta="bottom">Quiero mi cotización gratis</a>
+    <p class="or">¿Prefieres hablar con alguien? <a href="tel:+18178879043">Llama al (817) 887-9043</a></p>
+  </div>
+</section>
+
+<section id="privacidad" aria-labelledby="t-priv">
+  <div class="wrap">
+    <h2 id="t-priv">Aviso de privacidad</h2>
+    <p>Usamos la información que nos das en este formulario únicamente para comunicarnos contigo sobre tu cotización de seguro. No vendemos tu información personal.</p>
+    <p>Si ya no quieres que te contactemos, dínoslo y dejaremos de hacerlo. Puedes llamarnos al <a href="tel:+18178879043" style="color:var(--gold-hi)">(817) 887-9043</a>.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <svg class="divider" aria-hidden="true"><use href="#flourish"/></svg>
+    <p class="f-main">Nick Martinez Insurance Agency · Fort Worth y Grand Prairie, TX · <a href="tel:+18178879043">(817) 887-9043</a> · ElSantoNico.com</p>
+    <small>Santo Nico de los Asegurados es un personaje de marca de nuestra agencia, creado con humor y cariño y con todo respeto a la fe. Las cotizaciones, coberturas y precios dependen de cada persona y de los requisitos de suscripción. No se garantiza ahorro.</small>
+    <small><a href="#privacidad">Aviso de privacidad</a></small>
+  </div>
+</footer>
+
+<nav class="sticky" id="sticky" aria-label="Acciones rápidas">
+  <a class="btn btn-line" href="tel:+18178879043" data-cta="sticky-call">
+    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.500c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .7-.2 1z"/></svg>Llamar</a>
+  <a class="btn btn-gold" href="#cotizar" data-cta="sticky-quote">Cotizar</a>
+</nav>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ===================== CONFIGURATION ===================== */
+  // 1) Zapier "Catch Hook" URL for the workflow "santo-nico-squeeze-lead-to-agencyzoom"
+  //    (creates the lead in AgencyZoom, pipeline "Nicks Pipeline" / stage "New"; see README.md).
+  //    If this is ever empty or the POST fails, visitors see a "call us" fallback instead of the
+  //    thank-you message, and a console warning is logged.
+  var FORM_ENDPOINT = "https://hooks.zapier.com/hooks/catch/13623300/fuhH4BfovCeSXtvk/";
+
+  // 2) "no-cors" works with Zapier hooks (they don't send CORS headers; response is opaque,
+  //    so any request that reaches the server counts as success).
+  //    Use "cors" for endpoints that do send CORS headers so real HTTP errors are detected.
+  var SUBMIT_MODE = "no-cors";
+
+  // 3) "urlencoded" (default, accepted by Zapier Catch Hooks) or "formdata" (multipart).
+  var BODY_FORMAT = "urlencoded";
+
+  // 4) Optional: rename fields before sending, e.g. { nombre:"name", telefono:"phone", ... }
+  //    Leave {} to send the default field names listed in README.md.
+  var FIELD_MAP = {};
+  /* ========================================================== */
+
+  var form = document.getElementById("lead");
+  var btn = document.getElementById("submitBtn");
+  var msg = document.getElementById("formMsg");
+  var formView = document.getElementById("formView");
+  var thanks = document.getElementById("thanks");
+  var PHONE_HTML = '<a href="tel:+18178879043">(817) 887-9043</a>';
+
+  /* ---- hidden fields: page url, referrer, utm_* ---- */
+  var qs = new URLSearchParams(location.search);
+  ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"].forEach(function(k){
+    var el = form.elements[k]; if (el && qs.get(k)) el.value = qs.get(k);
+  });
+  form.elements.page_url.value = location.href;
+  form.elements.referrer.value = document.referrer || "";
+  // extra click ids if present in the URL (added dynamically at submit)
+  var extraIds = ["gclid","fbclid","msclkid"].filter(function(k){return qs.get(k)});
+
+  /* ---- validation ---- */
+  function setBad(id, bad){
+    var el = document.getElementById(id);
+    var holder = el.closest(".field") || el.closest(".pills-wrap");
+    if (holder) holder.classList.toggle("bad", !!bad);
+    el.setAttribute("aria-invalid", bad ? "true" : "false");
+  }
+  function digits(s){ return (s||"").replace(/\D/g,""); }
+  function validPhone(v){ var d = digits(v); if (d.length===11 && d[0]==="1") d = d.slice(1); return d.length===10; }
+  function validate(){
+    var bad = [];
+    var f = form.elements;
+    var checks = [
+      ["nombre", f.nombre.value.trim().length >= 2],
+      ["telefono", validPhone(f.telefono.value)],
+      ["codigo_postal", /^\d{5}$/.test(f.codigo_postal.value.trim())],
+      ["correo", f.correo.value.trim()==="" || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.correo.value.trim())],
+      ["consentimiento", f.consentimiento.checked]
+    ];
+    checks.forEach(function(c){ setBad(c[0], !c[1]); if(!c[1]) bad.push(c[0]); });
+    var quoteOk = !!form.querySelector('input[name="cotizar"]:checked');
+    document.getElementById("cotizarGroup").classList.toggle("bad", !quoteOk);
+    if(!quoteOk) bad.push("cotizarGroup");
+    return bad;
+  }
+  // clear errors as the user fixes things
+  form.addEventListener("input", function(e){
+    var h = e.target.closest(".field, .pills-wrap"); if (h) h.classList.remove("bad");
+    if (e.target.name === "codigo_postal") e.target.value = e.target.value.replace(/\D/g,"").slice(0,5);
+  });
+  form.addEventListener("change", function(e){
+    var h = e.target.closest(".field, .pills-wrap"); if (h) h.classList.remove("bad");
+  });
+
+  function showMsg(html){ msg.innerHTML = html; msg.classList.add("show"); }
+  function hideMsg(){ msg.classList.remove("show"); msg.innerHTML = ""; }
+
+  function showThanks(){
+    formView.style.display = "none";
+    thanks.classList.add("show");
+    thanks.focus({preventScroll:true});
+    thanks.scrollIntoView({behavior:"smooth", block:"center"});
+    try { window.dispatchEvent(new CustomEvent("santo-nico:lead-submitted")); } catch(e){}
+  }
+
+  function buildPayload(){
+    form.elements.timestamp.value = new Date().toISOString();
+    form.elements.page_url.value = location.href;
+    var fd = new FormData(form);
+    extraIds.forEach(function(k){ fd.append(k, qs.get(k)); });
+    // never send the consent checkbox as blank; it is required so it is "Sí" here
+    var out = new FormData();
+    fd.forEach(function(v,k){ out.append(FIELD_MAP[k] || k, v); });
+    if (BODY_FORMAT === "formdata") return {body: out, headers: {}};
+    var usp = new URLSearchParams();
+    out.forEach(function(v,k){ usp.append(k, v); });
+    return {body: usp, headers: {"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"}};
+  }
+
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    hideMsg();
+    var bad = validate();
+    if (bad.length){
+      var first = document.getElementById(bad[0]);
+      if (first) { (first.focus ? first : first.querySelector("input")).focus(); }
+      showMsg("Revisa los campos marcados en rojo.");
+      return;
+    }
+    // Honeypot: pretend success, send nothing
+    if (form.elements.empresa_web.value) { showThanks(); return; }
+
+    if (!FORM_ENDPOINT){
+      console.warn("[santo-nico] FORM_ENDPOINT is empty — lead NOT sent. Set FORM_ENDPOINT at the top of the script in index.html (see README.md).");
+      showMsg("Por ahora no pudimos enviar tu solicitud. Por favor llámanos al " + PHONE_HTML + " y con gusto te atendemos.");
+      return;
+    }
+
+    var p = buildPayload();
+    btn.disabled = true; var label = btn.textContent; btn.textContent = "Enviando…";
+    fetch(FORM_ENDPOINT, {method:"POST", mode:SUBMIT_MODE, body:p.body, headers:p.headers, keepalive:true})
+      .then(function(res){
+        // In no-cors mode the response is opaque (type "opaque") and counts as sent.
+        if (res.type === "opaque" || res.ok) { showThanks(); }
+        else { throw new Error("HTTP " + res.status); }
+      })
+      .catch(function(err){
+        console.error("[santo-nico] submit failed:", err);
+        showMsg("No pudimos enviar tu información. Inténtalo otra vez o llámanos al " + PHONE_HTML + ".");
+      })
+      .then(function(){ btn.disabled = false; btn.textContent = label; });
+  });
+
+  /* ---- sticky bar: hide while the form is on screen ---- */
+  var sticky = document.getElementById("sticky");
+  var target = document.getElementById("cotizar");
+  if ("IntersectionObserver" in window){
+    new IntersectionObserver(function(es){
+      sticky.classList.toggle("hide", es[0].intersectionRatio > 0.35);
+    }, {threshold:[0,.35,.6,1]}).observe(target);
+  }
+})();
+</script>
+</body>
+</html>
