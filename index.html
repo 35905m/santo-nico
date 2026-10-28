@@ -46,7 +46,7 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--ink);color:var(--text-d);font-family:var(--serif);font-size:17px;line-height:1.55;
   padding-bottom:calc(76px + env(safe-area-inset-bottom))}
-img,video,svg{max-width:100%}
+img,video,svg,iframe{max-width:100%}
 a{color:inherit}
 a[href^="tel:"]{white-space:nowrap}
 .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
@@ -82,7 +82,7 @@ a[href^="tel:"]{white-space:nowrap}
    linear-gradient(180deg,#1d0f07,#140b06)}
 .hero::before{content:"";position:absolute;inset:0;opacity:.07;pointer-events:none;
   background:repeating-conic-gradient(from 0deg at 50% 22%,#ffd978 0 4deg,transparent 4deg 12deg)}
-.hero-grid{position:relative;display:grid;gap:18px;grid-template-areas:"portrait" "copy" "form"}
+.hero-grid{position:relative;display:grid;gap:18px;grid-template-areas:"copy" "form" "portrait"}
 .portrait-box{grid-area:portrait;display:flex;justify-content:center}
 .arch{position:relative;width:min(50vw,196px);aspect-ratio:720/930;margin-top:24px}
 .arch::before{content:"";position:absolute;left:50%;top:-24px;width:78%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;
@@ -127,7 +127,9 @@ input:focus,select:focus{outline:3px solid rgba(212,166,58,.55);border-color:#7a
 .field.bad .err,.pills-wrap.bad .err{display:block}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:end}
 fieldset{border:0;margin:0 0 14px;padding:0;min-width:0}
-.pills{display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:8px}
+.pills{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.pills .pill:nth-child(-n+3){grid-column:span 2}
+.pills .pill:nth-child(n+4){grid-column:span 3}
 .pill{position:relative}
 .pill input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
 .pill span{display:flex;align-items:center;justify-content:center;min-height:54px;padding:6px 8px;text-align:center;font-family:var(--cinz);font-weight:800;font-size:15px;line-height:1.15;color:#3a200a;
@@ -171,11 +173,13 @@ section{position:relative}
 .video-sec{padding:50px 0 54px;background:radial-gradient(ellipse 80% 50% at 50% 30%,rgba(190,130,40,.22),transparent 70%),var(--brown)}
 .video-grid{display:grid;gap:30px;align-items:center;justify-items:center}
 .vframe{width:min(78vw,320px);padding:8px;border-radius:22px;background:linear-gradient(160deg,#fbe9a8,#c8962c 45%,#f1d27a 70%,#9a7420);box-shadow:0 0 0 2px #5e4010,0 16px 44px rgba(0,0,0,.6),0 0 60px rgba(240,190,70,.2)}
-.vframe video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:15px;background:#000}
+.vframe video,.vframe iframe{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border:0;border-radius:15px;background:#000}
 .prayer{position:relative;text-align:center;max-width:430px}
 .quote{font-family:var(--disp);font-weight:700;font-size:clamp(23px,6.2vw,31px);line-height:1.25;margin:10px 0 16px;color:var(--gold-hi)}
 .oracion{font-style:italic;color:var(--muted-d);font-size:17.5px;line-height:1.7;margin:0 0 6px}
 .oracion b{font-style:normal;color:var(--gold-hi);font-family:var(--cinz);letter-spacing:.1em}
+.more-yt{margin:12px 0 0;font-size:14.5px;line-height:1.45}
+.more-yt a{color:var(--gold-hi)}
 
 .trust{background:linear-gradient(180deg,#e3b947,#c8962c);color:#2a1505;border-top:2px solid #7a5712;border-bottom:2px solid #7a5712;padding:16px 0}
 .trust ul{list-style:none;margin:0 auto;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center;font-family:var(--cinz);font-weight:800;letter-spacing:.05em;font-size:15px;text-align:center}
@@ -201,6 +205,7 @@ footer{background:#0d0703;border-top:3px solid var(--gold);padding:30px 0 34px;t
 footer .f-main{font-family:var(--cinz);font-weight:700;font-size:14.5px;letter-spacing:.04em;line-height:1.7;color:var(--gold-hi);margin:10px 0 14px}
 footer .f-main a{text-decoration:none;white-space:nowrap}
 footer .f-main a:hover{text-decoration:underline}
+footer .yt{width:15px;height:15px;vertical-align:-3px;margin-right:4px;fill:currentColor}
 footer small{display:block;max-width:76ch;margin:0 auto 10px;font-size:13px;line-height:1.6;color:#cdb98d}
 footer small a{color:var(--gold-hi)}
 
@@ -241,8 +246,6 @@ footer small a{color:var(--gold-hi)}
 @media (max-width:360px){
   .brand{font-size:11px}
   .top .btn{padding:8px 12px;font-size:14px}
-  .pills{grid-template-columns:1fr 1fr}
-  .pills .pill:last-child{grid-column:1/-1}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 @media (prefers-reduced-motion:no-preference){
@@ -276,9 +279,9 @@ footer small a{color:var(--gold-hi)}
       <svg class="ic" fill="url(#g)" aria-hidden="true"><use href="#cross"/></svg>
       <span>Nick Martinez<br>Insurance Agency</span>
     </a>
-    <a class="btn btn-gold" href="tel:+18178879043" aria-label="Llamar al (817) 887-9043">
+    <a class="btn btn-gold" href="tel:+18173699010" aria-label="Llamar al (817) 369-9010">
       <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .7-.2 1z"/></svg>
-      <span>(817) 887-9043</span>
+      <span>(817) 369-9010</span>
     </a>
   </div>
 </header>
@@ -301,7 +304,7 @@ footer small a{color:var(--gold-hi)}
       <div class="copy">
         <p class="eyebrow">Santo Nico de los Asegurados</p>
         <h1>Protege tu hogar y tu auto, con fe y buen precio.</h1>
-        <p class="sub">Cotización gratis de seguro de <strong>hogar y auto</strong> para familias hispanas de Texas. Te atendemos en español.</p>
+        <p class="sub">Cotización gratis de seguro de <strong>auto, hogar, renta y negocio</strong> para familias hispanas de Texas. Te atendemos en español.</p>
         <div class="cta-row"><a class="btn btn-gold pulse" href="#cotizar" data-cta="hero">Quiero mi cotización gratis</a></div>
         <ul class="chips" aria-label="Datos de la agencia">
           <li>Atención en español</li><li>Fort Worth</li><li>Grand Prairie</li>
@@ -323,6 +326,8 @@ footer small a{color:var(--gold-hi)}
                   <label class="pill"><input type="radio" name="cotizar" value="Auto"><span>Auto</span></label>
                   <label class="pill"><input type="radio" name="cotizar" value="Hogar"><span>Hogar</span></label>
                   <label class="pill"><input type="radio" name="cotizar" value="Auto y Hogar" checked><span>Auto y Hogar</span></label>
+                  <label class="pill"><input type="radio" name="cotizar" value="Renta"><span>Renta</span></label>
+                  <label class="pill"><input type="radio" name="cotizar" value="Negocio"><span>Negocio</span></label>
                 </div>
                 <p class="err" id="err-cotizar">Elige una opción.</p>
               </fieldset>
@@ -388,14 +393,14 @@ footer small a{color:var(--gold-hi)}
               <div class="form-msg" id="formMsg" role="alert"></div>
               <p class="reassure">Sin compromiso. Sin spam. Tu información es privada.</p>
             </form>
-            <noscript><p class="form-msg show">Activa JavaScript para enviar el formulario, o llámanos al <a href="tel:+18178879043">(817) 887-9043</a>.</p></noscript>
+            <noscript><p class="form-msg show">Activa JavaScript para enviar el formulario, o llámanos al <a href="tel:+18173699010">(817) 369-9010</a>.</p></noscript>
           </div>
 
           <div class="thanks" id="thanks" role="status" aria-live="polite" tabindex="-1">
             <svg class="big-cross" fill="url(#g)" aria-hidden="true"><use href="#cross"/></svg>
             <h2>¡Amén!</h2>
             <p>Recibimos tu información. Te llamaremos pronto.</p>
-            <a class="btn btn-gold btn-block" href="tel:+18178879043">Llamar ahora</a>
+            <a class="btn btn-gold btn-block" href="tel:+18173699010">Llamar ahora</a>
           </div>
         </div>
       </div>
@@ -417,8 +422,8 @@ footer small a{color:var(--gold-hi)}
       </article>
       <article class="ben">
         <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15 16 4l13 11"/><path d="M6 13v9h7M26 13v9"/><path d="M13 29v-5a2 2 0 0 1 2-2h8l2 2v5"/><circle cx="16.500" cy="29" r="1.300"/><circle cx="23" cy="29" r="1.300"/></svg></div>
-        <h3>Auto y hogar, juntos</h3>
-        <p>Pregúntanos cómo combinar tus seguros para ahorrar tiempo y trámites.</p>
+        <h3>Auto, casa y tu chamba</h3>
+        <p>Cotizamos tu auto, tu casa, tu renta y tu negocio. Pregúntanos cómo combinar tus seguros para ahorrar tiempo y trámites.</p>
       </article>
       <article class="ben">
         <div class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="17" r="11"/><path d="M16 10v7l5 3"/><path d="M12 3h8"/></svg></div>
@@ -436,23 +441,27 @@ footer small a{color:var(--gold-hi)}
     <p class="sec-sub" style="color:var(--muted-d)">Unos segundos de fe, humor y buena cobertura.</p>
     <div class="video-grid">
       <div class="vframe">
-        <video controls playsinline preload="metadata" poster="assets/poster.jpg" width="720" height="1280" aria-label="Video: la historia de Santo Nico de los Asegurados">
-          <source src="assets/santo-nico.mp4" type="video/mp4">
-          Tu navegador no puede reproducir este video.
-        </video>
+        <iframe src="https://www.youtube.com/embed/EWa61uTYFPU" title="La historia de Santo Nico de los Asegurados" width="720" height="1280" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
       </div>
       <div class="prayer">
         <svg class="divider" aria-hidden="true" style="margin:0 0 6px"><use href="#flourish"/></svg>
         <p class="quote">“No prometo milagros… pero sí la mejor cobertura.”</p>
-        <p class="oracion"><b>Oración del asegurado</b><br>
+        <p class="oracion"><b>Oración del Santo Nico</b><br>
           Santo Nico, agente de confianza,<br>
           protector de mi auto, mi casa<br>
           y mi tranquilidad.<br>
+          <br>
           Cúbreme contra el granizo,<br>
           el chofer distraído<br>
           y los deducibles altos.<br>
-          <b>Amén.</b></p>
+          <br>
+          Que mi póliza nunca caduque,<br>
+          que mi prima nunca suba,<br>
+          y que mi claim siempre proceda.<br>
+          <br>
+          Amén.</p>
         <p style="margin:18px 0 0"><a class="btn btn-line" href="#cotizar" data-cta="video">Cotiza gratis</a></p>
+        <p class="more-yt"><a href="https://www.youtube.com/channel/UCQhGHMapIsFSEbYto6Fkbug" target="_blank" rel="noopener noreferrer">Ver más videos de Santo Nico</a></p>
       </div>
     </div>
   </div>
@@ -477,7 +486,7 @@ footer small a{color:var(--gold-hi)}
       <figure><div class="gf"><img loading="lazy" decoding="async" src="assets/cargo.webp" width="540" height="960" alt="Santo Nico sosteniendo un cartel de broma: cargo, exceso de compromiso con mis clientes; fianza, tu confianza."></div><figcaption>Fianza: tu confianza</figcaption></figure>
     </div>
     <a class="btn btn-gold btn-block pulse" href="#cotizar" data-cta="bottom">Quiero mi cotización gratis</a>
-    <p class="or">¿Prefieres hablar con alguien? <a href="tel:+18178879043">Llama al (817) 887-9043</a></p>
+    <p class="or">¿Prefieres hablar con alguien? <a href="tel:+18173699010">Llama al (817) 369-9010</a></p>
   </div>
 </section>
 
@@ -485,7 +494,7 @@ footer small a{color:var(--gold-hi)}
   <div class="wrap">
     <h2 id="t-priv">Aviso de privacidad</h2>
     <p>Usamos la información que nos das en este formulario únicamente para comunicarnos contigo sobre tu cotización de seguro. No vendemos tu información personal.</p>
-    <p>Si ya no quieres que te contactemos, dínoslo y dejaremos de hacerlo. Puedes llamarnos al <a href="tel:+18178879043" style="color:var(--gold-hi)">(817) 887-9043</a>.</p>
+    <p>Si ya no quieres que te contactemos, dínoslo y dejaremos de hacerlo. Puedes llamarnos al <a href="tel:+18173699010" style="color:var(--gold-hi)">(817) 369-9010</a>.</p>
   </div>
 </section>
 </main>
@@ -493,14 +502,14 @@ footer small a{color:var(--gold-hi)}
 <footer>
   <div class="wrap">
     <svg class="divider" aria-hidden="true"><use href="#flourish"/></svg>
-    <p class="f-main">Nick Martinez Insurance Agency · Fort Worth y Grand Prairie, TX · <a href="tel:+18178879043">(817) 887-9043</a> · ElSantoNico.com</p>
+    <p class="f-main">Nick Martinez Insurance Agency · Fort Worth y Grand Prairie, TX · <a href="tel:+18173699010">(817) 369-9010</a> · ElSantoNico.com · <a href="https://www.youtube.com/channel/UCQhGHMapIsFSEbYto6Fkbug" target="_blank" rel="noopener noreferrer"><svg class="yt" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>Míralo en YouTube</a></p>
     <small>Santo Nico de los Asegurados es un personaje de marca de nuestra agencia, creado con humor y cariño y con todo respeto a la fe. Las cotizaciones, coberturas y precios dependen de cada persona y de los requisitos de suscripción. No se garantiza ahorro.</small>
     <small><a href="#privacidad">Aviso de privacidad</a></small>
   </div>
 </footer>
 
 <nav class="sticky" id="sticky" aria-label="Acciones rápidas">
-  <a class="btn btn-line" href="tel:+18178879043" data-cta="sticky-call">
+  <a class="btn btn-line" href="tel:+18173699010" data-cta="sticky-call">
     <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.500c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .7-.2 1z"/></svg>Llamar</a>
   <a class="btn btn-gold" href="#cotizar" data-cta="sticky-quote">Cotizar</a>
 </nav>
@@ -534,7 +543,7 @@ footer small a{color:var(--gold-hi)}
   var msg = document.getElementById("formMsg");
   var formView = document.getElementById("formView");
   var thanks = document.getElementById("thanks");
-  var PHONE_HTML = '<a href="tel:+18178879043">(817) 887-9043</a>';
+  var PHONE_HTML = '<a href="tel:+18173699010">(817) 369-9010</a>';
 
   /* ---- hidden fields: page url, referrer, utm_* ---- */
   var qs = new URLSearchParams(location.search);
